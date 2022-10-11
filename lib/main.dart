@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +12,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
+  late bool favourite=false;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -46,71 +46,254 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
           ),
           body: TabBarView(
             children: <Widget>[
+              //1
               ListView(
                 children: [
                   SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Column(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.network(
+                        Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
 
-                           "https://i.playground.ru/i/pix/1447307/image.jpg"
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: GestureDetector(
+                           onTap: isFavourite(),
+                            child: const Icon(
+                              Icons.favorite_outline_rounded,
+                              size: 24,
+                              color: Colors.red,
+                            ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.network(
-                            "https://get.wallhere.com/photo/car-vehicle-sports-car-Ferrari-performance-car-Ferrari-458-netcarshow-netcar-car-images-car-photo-2016-488-GTB-supercar-land-vehicle-automotive-design-automobile-make-model-car-luxury-vehicle-ferrari-spa-390602.jpg"
+                        Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.network(
-                            "https://mobimg.b-cdn.net/v3/fetch/e4/e4827f228c6f874e6b089a43254cd61a.jpeg?w=1470&r=0.5625"
+                        Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                " ",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
                           ),
                         ),
-                       Padding(
-                         padding: const EdgeInsets.all(10.0),
-                         child: Image.network(
-                           "http://oboi.ws/filters/inkwell_14_4793_oboi_ognennyj_ferrari_1366x768.jpg"
+                        Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://s1.1zoom.ru/b5050/383/Ferrari_F12_berlinetta_Front_Red_587294_2048x1152.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
                           ),
-                       ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
+                          ),
+                        ), Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
+                          ),
+                        ),
                       ],
                     ),
                   )
                 ],
               ),
+              //2
               ListView(
                 children: [
                   SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Column(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.network(
+                        Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
 
-                              "https://i.playground.ru/i/pix/1447307/image.jpg"
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.network(
-                              "https://get.wallhere.com/photo/car-vehicle-sports-car-Ferrari-performance-car-Ferrari-458-netcarshow-netcar-car-images-car-photo-2016-488-GTB-supercar-land-vehicle-automotive-design-automobile-make-model-car-luxury-vehicle-ferrari-spa-390602.jpg"
+                        Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.network(
-                              "https://mobimg.b-cdn.net/v3/fetch/e4/e4827f228c6f874e6b089a43254cd61a.jpeg?w=1470&r=0.5625"
+                        Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.network(
-                              "http://oboi.ws/filters/inkwell_14_4793_oboi_ognennyj_ferrari_1366x768.jpg"
+                        Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
+                          ),
+                        ), Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
+                          ),
+                        ), Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
                           ),
                         ),
                       ],
@@ -118,34 +301,135 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                   )
                 ],
               ),
+              //3
               ListView(
                 children: [
                   SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Column(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.network(
-                              "https://i.playground.ru/i/pix/1447307/image.jpg",
+                        Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.network(
-                              "https://get.wallhere.com/photo/car-vehicle-sports-car-Ferrari-performance-car-Ferrari-458-netcarshow-netcar-car-images-car-photo-2016-488-GTB-supercar-land-vehicle-automotive-design-automobile-make-model-car-luxury-vehicle-ferrari-spa-390602.jpg"
+                        Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.network(
-                              "https://mobimg.b-cdn.net/v3/fetch/e4/e4827f228c6f874e6b089a43254cd61a.jpeg?w=1470&r=0.5625"
+                        Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.network(
-                              "http://oboi.ws/filters/inkwell_14_4793_oboi_ognennyj_ferrari_1366x768.jpg"
+                        Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
+                          ),
+                        ), Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
+                          ),
+                        ), Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
                           ),
                         ),
                       ],
@@ -153,35 +437,135 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                   )
                 ],
               ),
+              //4
               ListView(
                 children: [
                   SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Column(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.network(
+                        Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
 
-                              "https://i.playground.ru/i/pix/1447307/image.jpg"
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.network(
-                              "https://get.wallhere.com/photo/car-vehicle-sports-car-Ferrari-performance-car-Ferrari-458-netcarshow-netcar-car-images-car-photo-2016-488-GTB-supercar-land-vehicle-automotive-design-automobile-make-model-car-luxury-vehicle-ferrari-spa-390602.jpg"
+                        Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.network(
-                              "https://mobimg.b-cdn.net/v3/fetch/e4/e4827f228c6f874e6b089a43254cd61a.jpeg?w=1470&r=0.5625"
+                        Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.network(
-                              "http://oboi.ws/filters/inkwell_14_4793_oboi_ognennyj_ferrari_1366x768.jpg"
+                        Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
+                          ),
+                        ), Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
+                          ),
+                        ), Container(
+                          height: 200,
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(12),
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                "https://i.playground.ru/i/pix/1447307/image.jpg",
+
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(
+                            Icons.favorite_outline_rounded,
+                            color: Colors.red,
+                            size: 24,
                           ),
                         ),
                       ],
@@ -195,4 +579,23 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
       ),
     );
   }
+
+  isFavourite() {
+    if(favourite==false) {
+      favourite=true;
+    }else{
+      favourite=false;
+    }
+  }
+  isRed<Color>(bool a){
+    Color b=Colors.black as Color;
+    Color r=Colors.red as Color;
+   if(a==true)
+    return r;
+   else
+     return b;
+
+  }
+
+
 }
